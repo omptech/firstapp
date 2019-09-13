@@ -18,16 +18,21 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
      WebView webView;
+     FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         webView=(WebView)findViewById(R.id.web);
+        firebaseAuth=FirebaseAuth.getInstance();
+
         WebSettings webSettings=webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("https://okystech.000webhostapp.com");
@@ -51,6 +56,8 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
+
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -77,6 +84,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -85,7 +93,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_logout) {
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(MainActivity.this,LoginActivity.class));
             return true;
         }
 

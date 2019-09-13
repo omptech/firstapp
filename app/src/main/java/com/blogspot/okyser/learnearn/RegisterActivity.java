@@ -49,7 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                                startActivity(new Intent(RegisterActivity.this,MainActivity.class));
                             }
                             else
                             {
@@ -78,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
         String email=usemail.getText().toString();
         String password=upassword.getText().toString();
 
-        if(name.isEmpty() && email.isEmpty() && password.isEmpty())
+        if(name.isEmpty() || email.isEmpty() || password.isEmpty())
         {
             Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
         }
