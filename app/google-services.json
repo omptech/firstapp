@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "1047238305048",
-    "firebase_url": "https://learnearn-d5693.firebaseio.com",
-    "project_id": "learnearn-d5693",
-    "storage_bucket": "learnearn-d5693.appspot.com"
+    "project_number": "809929467038",
+    "firebase_url": "https://learnearn-f1a0c.firebaseio.com",
+    "project_id": "learnearn-f1a0c",
+    "storage_bucket": "learnearn-f1a0c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1047238305048:android:1c14520f0acdab0c6caa6d",
+        "mobilesdk_app_id": "1:809929467038:android:464df278c819a63920878f",
         "android_client_info": {
-          "package_name": "com.blogspot.okyser.lcmhcf"
+          "package_name": "com.blogspot.okyser.learnearn"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1047238305048-lbtml070644mnaepah5g2mc28dccton0.apps.googleusercontent.com",
+          "client_id": "809929467038-4g8qlth06ci06b37qa56vv8fdekf9env.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAjjzAJxa7lTMp2yFv-TozkZxIeqNuCfiw"
+          "current_key": "AIzaSyB5s1xKigwmSZA1ShIgZZst0_q8WOF2_Tg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1047238305048-lbtml070644mnaepah5g2mc28dccton0.apps.googleusercontent.com",
+              "client_id": "809929467038-4g8qlth06ci06b37qa56vv8fdekf9env.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
