@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1047238305048",
+    "firebase_url": "https://learnearn-d5693.firebaseio.com",
+    "project_id": "learnearn-d5693",
+    "storage_bucket": "learnearn-d5693.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047238305048:android:1c14520f0acdab0c6caa6d",
+        "android_client_info": {
+          "package_name": "com.blogspot.okyser.lcmhcf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047238305048-lbtml070644mnaepah5g2mc28dccton0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjjzAJxa7lTMp2yFv-TozkZxIeqNuCfiw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047238305048-lbtml070644mnaepah5g2mc28dccton0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
