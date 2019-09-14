@@ -19,12 +19,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView textView,attempt;
+    TextView textView,attempt,forgotpassword;
     EditText email,password;
     int counter=5;
     Button login;
     FirebaseAuth firebaseAuth;
     ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         email=findViewById(R.id.etname);
         password=findViewById(R.id.etpassword);
         login=findViewById(R.id.button);
+        forgotpassword=findViewById(R.id.tvforgotpass);
         firebaseAuth=FirebaseAuth.getInstance();
         FirebaseUser user=firebaseAuth.getCurrentUser();
         progressDialog=new ProgressDialog(this);
@@ -64,6 +66,12 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
+            }
+        });
+        forgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,PasswordActivity.class));
             }
         });
     }
