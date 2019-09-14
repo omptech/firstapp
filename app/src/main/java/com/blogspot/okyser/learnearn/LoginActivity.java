@@ -47,7 +47,15 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validate(email.getText().toString(),password.getText().toString());
+               String uemail=email.getText().toString();
+               String upass= password.getText().toString();
+               if(uemail.isEmpty() || upass.isEmpty())
+               {
+                   Toast.makeText(LoginActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
+               }
+                else {
+                   validate(uemail, upass);
+               }
             }
         });
 
@@ -62,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void validate(String useremail,String userpassword)
     {
+
         progressDialog.setMessage("Please wait until you are verified");
         progressDialog.show();
         firebaseAuth.signInWithEmailAndPassword(useremail,userpassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -70,8 +79,9 @@ public class LoginActivity extends AppCompatActivity {
               if(task.isSuccessful())
               {
                   progressDialog.dismiss();
-                  Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                  startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                 // Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                 // startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                  EmailVerfication();
               }
               else
               {
@@ -87,4 +97,21 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void EmailVerfication()
+    {
+        FirebaseUser firebaseUser=firebaseAuth.getInstance().getCurrentUser();
+        Boolean emailflag=firebaseUser.isEmailVerified();
+        if(emailflag)
+        {
+            finish();
+            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+        }
+        else
+        {
+            Toast.makeText(this, "Verify your Email", Toast.LENGTH_SHORT).show();
+            firebaseAuth.signOut();
+        }
+    }
 }
+
