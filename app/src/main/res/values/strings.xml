@@ -14,7 +14,7 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="namehint">Email</string>
-    <string name="name">Name</string>
+    <string name="name">Username</string>
     <string name="passhint">Password</string>
     <string name="siginin">Already SignUp!Login</string>
     <string name="signup">New User?SignUp!</string>
